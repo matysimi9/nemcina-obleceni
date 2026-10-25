@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oblečení · procvičování němčiny</title>
+<style>
+:root{--ink:#29263a;--muted:#777487;--paper:#f8f5fb;--purple:#6d28d9;--green:#16834b;--red:#bb3241}*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:radial-gradient(circle at 12% 0,#eadfff,transparent 25rem),radial-gradient(circle at 95% 20%,#ffe8dc,transparent 25rem),var(--paper);color:var(--ink);font:16px/1.5 "Segoe UI",Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #6d28d955;outline-offset:3px}
+.wrap{width:min(960px,calc(100% - 30px));margin:auto;padding:22px 0 45px}.brand{display:flex;gap:12px;align-items:center;margin-bottom:25px}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#eee6ff;color:#6d28d9;font-size:22px}.brand b{font-size:13px;letter-spacing:.09em;text-transform:uppercase}.brand small{display:block;color:var(--muted)}
+.hero{padding:8px 2px 24px}.eyebrow{margin:0 0 8px;color:#7651ad;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}h1{font-size:clamp(30px,5vw,46px);line-height:1.08;letter-spacing:-.04em;margin:0 0 12px}.hero p{color:var(--muted);margin:0;max-width:650px}
+.panel,.quiz{background:#fffffff2;border:1px solid #e2dced;border-radius:22px;padding:clamp(18px,4vw,28px);box-shadow:0 12px 32px #3322530f}.panel+.panel{margin-top:16px}.head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:18px}h2{font-size:20px;margin:0}.note{color:var(--muted);font-size:13px;margin:5px 0 0}.chips,.pages,.row{display:flex;gap:10px;flex-wrap:wrap}
+.chip,.page,.all,.primary,.secondary,.opt,.aux{border:0;border-radius:13px;font-weight:750;transition:transform .14s}.chip:hover,.page:hover,.all:hover,.primary:hover,.secondary:hover,.opt:hover,.aux:hover{transform:translateY(-1px)}
+.chip{--c:#6d28d9;color:var(--c);background:color-mix(in srgb,var(--c) 10%,white);border:1px solid color-mix(in srgb,var(--c) 28%,white);padding:11px 15px}.chip[aria-pressed=true]{color:white;background:var(--c);border-color:var(--c)}
+.page{color:#22577b;background:#e2f2ff;border:1px solid #c3e4fb;padding:10px 15px}.page[aria-pressed=true]{background:#c9e7ff;border-color:#8ecdf5;color:#174466}
+.all{background:#29263a;color:white;padding:12px 16px;white-space:nowrap}.bottom,.footrow{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:20px}.count{font-size:14px;color:var(--muted)}
+.primary{background:var(--purple);color:white;padding:12px 20px;box-shadow:0 7px 16px #6d28d92e}.primary:hover{background:#5520aa}.primary:disabled{opacity:.42;cursor:not-allowed;transform:none}.secondary{background:#f1eef6;color:#4f4a61;padding:10px 15px}.back,.exit{background:transparent;border:0;color:#6d28d9;font-weight:750;padding:5px 0}.back{margin-bottom:14px}
+.opt{background:#f3effa;color:#4b3f61;border:1px solid #e5deef;padding:11px 16px}.opt[aria-pressed=true]{background:#6d28d9;color:#fff}.label{font-size:13px;color:#5f5a70;font-weight:800;margin:22px 0 10px}.extra{margin-top:18px;padding:16px;border-radius:16px;background:#faf7ff;border:1px solid #e9e0fa}.summary{margin-top:18px;padding:13px 15px;background:#f7f4fb;border-radius:14px;color:#625d72;font-size:14px}
+.top{display:flex;justify-content:space-between;align-items:center}.progress,.score{font-size:13px;color:#686477}.track{height:8px;background:#ebe7f2;border-radius:99px;margin:12px 0 20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#9a6bea,#6d28d9);width:0}
+.prompt{text-align:center;background:linear-gradient(135deg,#f6f0ff,#fff8f2);border-radius:18px;padding:clamp(26px,6vw,52px) 18px 30px}.prompt p{margin:0}.prompt-label{color:#797287;font-size:13px;font-weight:750}.word{font-size:clamp(25px,5vw,38px);font-weight:800;overflow-wrap:anywhere}.meta{font-size:12px;color:#8a8498;margin-top:12px!important}.answer{margin-top:22px}.input{display:block;width:min(100%,40ch);min-height:54px;margin:auto;border:1.5px solid #d8d1e4;border-radius:13px;padding:12px 15px;font-size:18px}.hint{text-align:center;color:var(--muted);font-size:12px;margin:8px 0 14px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.choice{min-height:54px;padding:12px 14px;border:1px solid #e6e1ed;border-radius:14px;background:white;text-align:left;color:#3b354b;font-weight:700}.choice:hover{background:#fbf9ff;border-color:#bda8e2}
+.auxbox{text-align:center;margin:0 auto 16px}.auxlabel{font-size:12px;color:#726c80;font-weight:800;margin:0 0 8px}.auxrow{display:flex;justify-content:center;gap:10px}.aux{min-width:92px;padding:10px 18px;color:#514179;background:#eee8fb;border:1px solid #d8caf3}.aux[aria-pressed=true]{background:#8b5cf6;color:white}.auxstate{font-size:12px;color:#817b8f;margin:8px}
+.feedback{margin-top:18px;padding:14px 16px;border-radius:14px;font-weight:750}.good{color:var(--green);background:#e9f8ef}.bad{color:var(--red);background:#fff0f1}.feedback small{display:block;color:#615d6b;font-weight:500;margin-top:3px}.result{text-align:center;padding:34px 22px}.result-score{font-size:48px;font-weight:850;color:var(--purple)}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}.footer{text-align:center;color:#8a8498;font-size:12px;margin-top:24px}
+@media(max-width:640px){.head{flex-direction:column}.all{width:100%}.bottom,.footrow{align-items:stretch;flex-direction:column}.bottom .primary,.footrow .primary{width:100%}.answers{grid-template-columns:1fr}.top{align-items:flex-start}}
+/* Slovník */
+.brand{position:sticky;top:8px;z-index:6;padding:8px 10px;background:#f8f5fbeF;backdrop-filter:blur(10px);border-radius:16px}
+.dict-open{margin-left:auto;padding:10px 16px;border:1px solid #d8caf3;border-radius:13px;background:#eee8fb;color:#5b2ca4;font-weight:800}
+.dict-open:hover{background:#e4d8fa}
+.dict-overlay{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:14px;background:#211936a8;backdrop-filter:blur(5px)}
+.dict-card{width:min(960px,100%);max-height:min(91vh,850px);display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #e5deef;border-radius:22px;box-shadow:0 25px 80px #160d2a55}
+.dict-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 24px 14px}
+.dict-head h2{font-size:24px}.dict-head .eyebrow{margin-bottom:5px}
+.dict-close{width:40px;height:40px;border:0;border-radius:12px;background:#f1eef6;color:#514b60;font-size:24px}
+.dict-intro{padding:0 24px 14px;margin:0;color:#777487;font-size:13px}
+.dict-tools{display:grid;grid-template-columns:minmax(180px,1fr) 190px 150px;gap:10px;padding:0 24px 16px}
+.dict-tools input,.dict-tools select{min-width:0;padding:11px 12px;border:1px solid #ddd7e7;border-radius:12px;background:#fff;color:#29263a}
+.dict-count{padding:0 24px 10px;color:#777487;font-size:12px}
+.dict-list{overflow:auto;padding:0 24px 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dict-item{padding:14px 15px;border:1px solid #ebe6f1;border-radius:15px;background:#fdfcff}
+.dict-item h3{margin:4px 0 6px;font-size:17px;line-height:1.3}
+.dict-tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#f0eafb;color:#6943a7;font-size:11px;font-weight:800}
+.dict-detail{margin:4px 0;color:#5f5b6d;font-size:13px}.dict-detail strong{color:#302c40}
+.dict-empty{grid-column:1/-1;padding:24px;text-align:center;color:#777487}
+@media(max-width:680px){.dict-tools{grid-template-columns:1fr 1fr}.dict-tools input{grid-column:1/-1}.dict-list{grid-template-columns:1fr;padding:0 16px 18px}.dict-head{padding:18px 18px 12px}.dict-intro,.dict-count{padding-left:18px;padding-right:18px}.dict-tools{padding-left:18px;padding-right:18px}.dict-card{max-height:94vh}.brand{top:4px}}
+/* Mobilní rozložení: šířku rozpozná automaticky velikost obrazovky. */
+@media(max-width:600px){
+  .wrap{width:calc(100% - 16px);padding:8px 0 28px}
+  .brand{top:0;margin-bottom:14px;padding:7px 8px;gap:8px}
+  .mark{width:36px;height:36px;flex:0 0 36px}
+  .brand b{font-size:11px}.brand small{font-size:10px}
+  .dict-open{min-height:44px;padding:9px 12px}
+  .hero{padding:12px 2px 18px}
+  .hero h1{font-size:32px}
+  .panel,.quiz{padding:16px;border-radius:18px}
+  .chips .chip{flex:1 1 100%;min-height:44px;text-align:left}
+  .pages .page{flex:1 1 calc(50% - 6px);min-height:44px;text-align:center}
+  .row .opt{flex:1 1 100%;min-height:44px;text-align:center}
+  .all,.primary,.secondary{min-height:44px}
+  .prompt{padding:28px 14px 24px}
+  .word{font-size:28px}
+  .input{width:100%;font-size:16px}
+  .choice{min-height:52px}
+  .dict-tools{grid-template-columns:1fr;gap:8px}
+  .dict-tools input,.dict-tools select{grid-column:auto;min-height:44px}
+  .dict-head{padding:16px}
+  .dict-intro{padding:0 16px 12px}
+  .dict-count{padding:0 16px 10px}
+  .dict-list{padding:0 14px 16px}
+  .dict-item h3{font-size:16px}
+}
+</style></head><body><div class="wrap">
+<header class="brand"><div class="mark">✦</div><div><b>Němčina · slovní zásoba</b><small>Oblečení a styl</small></div><button id="dictOpen" class="dict-open" type="button" aria-haspopup="dialog" aria-controls="dictionaryModal">Slovník</button></header>
+<div id="dictionaryModal" class="dict-overlay" hidden>
+  <section class="dict-card" role="dialog" aria-modal="true" aria-labelledby="dictTitle">
+    <div class="dict-head"><div><p class="eyebrow">Vše z tvého seznamu</p><h2 id="dictTitle">Slovník oblečení</h2></div><button id="dictClose" class="dict-close" type="button" aria-label="Zavřít slovník">×</button></div>
+    <p class="dict-intro">Německé výrazy, české významy, množná čísla a tvary sloves jsou součástí této stránky.</p>
+    <div class="dict-tools">
+      <input id="dictSearch" type="search" placeholder="Hledat německy nebo česky…" aria-label="Hledat ve slovníku">
+      <select id="dictKind" aria-label="Filtrovat slovní druh"><option value="all">Všechny slovní druhy</option><option value="noun">Podstatná jména</option><option value="adjective">Přídavná jména a příslovce</option><option value="verb">Slovesa</option><option value="phrase">Spojení a fráze</option></select>
+      <select id="dictPage" aria-label="Filtrovat stranu"><option value="all">Všechny strany</option><option value="39">Strana 39</option><option value="40">Strana 40</option><option value="41">Strana 41</option><option value="42">Strana 42</option><option value="43">Strana 43</option><option value="44">Strana 44</option><option value="45">Strana 45</option></select>
+    </div>
+    <div id="dictCount" class="dict-count"></div>
+    <div id="dictList" class="dict-list"></div>
+  </section>
+</div><main>
+<section id="select"><div class="hero"><p class="eyebrow">Učení po malých dávkách</p><h1>Procvič si slovíčka<br>o oblečení.</h1><p>Vyber si stránky a slovní druhy. Pak zvol směr překladu a způsob odpovídání.</p></div>
+<div class="panel"><div class="head"><div><h2>Co chceš procvičovat?</h2><p class="note">Každý slovní druh má vlastní barvu.</p></div><button id="all" class="all" type="button">Procvičovat vše ↗</button></div>
+<div class="chips">
+<button class="chip" style="--c:#6d28d9" data-cat="noun" aria-pressed="false">Podstatná jména</button>
+<button class="chip" style="--c:#c026d3" data-cat="adjective" aria-pressed="false">Přídavná jména a příslovce</button>
+<button class="chip" style="--c:#ea580c" data-cat="verb-inf" aria-pressed="false">Slovesa · infinitiv</button>
+<button class="chip" style="--c:#a21caf" data-cat="verb-past" aria-pressed="false">Slovesa · minulý čas</button>
+<button class="chip" style="--c:#854d0e" data-cat="phrase" aria-pressed="false">Slovní spojení a fráze</button></div></div>
+<div class="panel"><div class="head"><div><h2>Vyber stránky</h2><p class="note">Můžeš vybrat jednu nebo několik. Bez výběru se použijí všechny.</p></div></div>
+<div class="pages"><button class="page" data-page="39" aria-pressed="false">Strana 39</button><button class="page" data-page="40" aria-pressed="false">Strana 40</button><button class="page" data-page="41" aria-pressed="false">Strana 41</button><button class="page" data-page="42" aria-pressed="false">Strana 42</button><button class="page" data-page="43" aria-pressed="false">Strana 43</button><button class="page" data-page="44" aria-pressed="false">Strana 44</button><button class="page" data-page="45" aria-pressed="false">Strana 45</button></div>
+<div class="bottom"><div id="count" class="count">Zatím není nic vybráno. Nebo zvol „Procvičovat vše“.</div><button id="continue" class="primary" disabled>Pokračovat →</button></div></div></section>
+<section id="settings" hidden><button id="back" class="back">← Zpět k výběru</button><div class="hero"><p class="eyebrow">Druhý krok</p><h1>Jak chceš trénovat?</h1><p>Zvol směr překladu a potom napiš odpověď, nebo ji vyber z možností.</p></div>
+<div class="panel"><h2>Směr překladu</h2><div class="row" style="margin-top:12px"><button class="opt" data-dir="de-cs" aria-pressed="true">Němčina → čeština</button><button class="opt" data-dir="cs-de" aria-pressed="false">Čeština → němčina</button><button class="opt" data-dir="both" aria-pressed="false">Oběma směry</button></div>
+<p class="label">Způsob odpovídání</p><div class="row"><button class="opt" data-mode="type" aria-pressed="true">Napsat odpověď</button><button class="opt" data-mode="choice" aria-pressed="false">Vybrat ze 4 možností</button></div>
+<div id="extra" class="extra" hidden><p class="label" style="margin:0">Navíc pro slovesa</p><p class="note">Převeď německý infinitiv na Perfekt.</p><button id="perfekt" class="opt" aria-pressed="false" style="margin-top:12px">Německý infinitiv → Perfekt</button></div>
+<div id="summary" class="summary"></div><div class="footrow"><span class="note">Správná odpověď se ukáže po každé otázce.</span><button id="start" class="primary">Začít procvičovat →</button></div></div></section>
+<section id="quiz" hidden><div class="top"><div><div id="progress" class="progress"></div><div id="score" class="score"></div></div><button id="exit" class="exit">Ukončit procvičování</button></div><div class="track"><div id="fill" class="fill"></div></div>
+<div class="quiz"><div class="prompt"><p id="promptLabel" class="prompt-label"></p><p id="promptWord" class="word"></p><p id="meta" class="meta"></p></div><div id="answer" class="answer"></div><div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+<div class="footrow"><button id="backSettings" class="secondary">Změnit nastavení</button><button id="next" class="primary" hidden>Další otázka →</button></div></div></section>
+<section id="result" hidden><div class="panel result"><div id="emoji" style="font-size:42px">✨</div><p class="eyebrow">Hotovo</p><h1>Kolo dokončeno.</h1><div id="resultScore" class="result-score"></div><p id="resultText" class="note"></p><div class="actions"><button id="repeat" class="primary">Procvičit znovu</button><button id="newSelection" class="secondary">Změnit výběr</button></div></div></section>
+</main><div class="footer">Slovíčka vycházejí z tvého seznamu k tématu oblečení.</div></div>
+<script>
+const rows=[
+[39,"noun","der Bikini",["bikiny"],"die Bikinis"],[39,"noun","der Flipflop",["žabka (bota)"],"die Flipflops"],[39,"noun","der Gummistiefel",["gumák","holinka"],"die Gummistiefel"],[39,"noun","der Pullover",["svetr"],"die Pullover"],[39,"noun","der Regenschirm",["deštník"],"die Regenschirme"],[39,"noun","der Schal",["šála"],"die Schals"],[39,"noun","die Hose",["kalhoty"],"die Hosen"],[39,"noun","die Jacke",["bunda"],"die Jacken"],[39,"noun","die Jeans",["džíny"],"die Jeans","ženský rod nebo pomnožné"],[39,"noun","die Wetter-App",["aplikace počasí"],"die Wetter-Apps"],[39,"noun","das Hemd",["košile"],"die Hemden"],[39,"noun","das Kleid",["šaty"],"die Kleider"],
+[40,"noun","der Anzug",["oblek"],"die Anzüge"],[40,"noun","der Ausverkauf",["výprodej"],"die Ausverkäufe"],[40,"noun","der BH / der Büstenhalter",["podprsenka"],"die BHs / die Büstenhalter"],[40,"noun","der Flyer",["leták"],"die Flyer"],[40,"noun","der Halbschuh",["polobotka"],"die Halbschuhe"],[40,"noun","der Mantel",["kabát"],"die Mäntel"],[40,"noun","der Pumps",["lodička (bota)"],"die Pumps"],[40,"noun","der Rock",["sukně"],"die Röcke"],[40,"noun","der Schlafanzug",["pyžamo (oblečení na spaní)"],"die Schlafanzüge"],[40,"noun","der Sportschuh",["sportovní bota"],"die Sportschuhe"],[40,"noun","der Stiefel",["kozačka"],"die Stiefel"],[40,"noun","der Strickpullover",["pletený svetr"],"die Strickpullover"],[40,"noun","die Badehose",["pánské plavky"],"die Badehosen"],[40,"noun","die Bluse",["blůza","halenka"],"die Blusen"],[40,"noun","die Boxershorts",["boxerky"],"pomnožné"],[40,"noun","die Jogginghose",["sportovní (běžecké) kalhoty","tepláky"],"die Jogginghosen"],[40,"noun","die Mütze",["čepice"],"die Mützen"],[40,"noun","die Sandale",["sandál"],"die Sandalen"],[40,"noun","die Strumpfhose",["punčocháče"],"die Strumpfhosen"],[40,"noun","die Tunika",["tunika"],"die Tuniken"],[40,"noun","das Höschen",["kalhotky"],"die Höschen"],[40,"noun","das Kleidungsstück",["kus oděvu","oděv"],"die Kleidungsstücke"],[40,"noun","das Sweatshirt",["mikina"],"die Sweatshirts"],[40,"noun","das Top",["top","krátké tričko"],"die Tops"],
+[41,"noun","das Outfit",["outfit"],"die Outfits"],[42,"noun","der Schnürschuh",["šněrovací bota"],"die Schnürschuhe"],[42,"noun","die Größe",["velikost"],"die Größen"],[42,"noun","die Umkleidekabine",["převlékací kabina"],"die Umkleidekabinen"],[42,"noun","die Shorts",["šortky"],"pomnožné"],[42,"noun","die Leggings",["legíny"],"pomnožné"],[42,"noun","die Skinny-Jeans",["úzké džíny"],"pomnožné"],[42,"noun","der/das Sakko",["sako"],"die Sakkos"],
+[43,"noun","der Alltag",["všední den"],"obvykle bez množného čísla"],[43,"noun","der Ausschnitt",["výstřih"],"die Ausschnitte"],[43,"noun","der Blazer",["sportovní sako","blejzr"],"die Blazer"],[43,"noun","der Gürtel",["pásek"],"die Gürtel"],[43,"noun","der Hut",["klobouk"],"die Hüte"],[43,"noun","der Kragen",["límec"],"die Kragen"],[43,"noun","der Ohrring",["náušnice"],"die Ohrringe"],[43,"noun","der Ring",["prsten"],"die Ringe"],[43,"noun","der Trekkingschuh",["treková bota"],"die Trekkingschuhe"],[43,"noun","der Typ",["typ"],"die Typen"],[43,"noun","der Rucksack",["batoh"],"die Rucksäcke"],[43,"noun","die Augenbraue",["obočí"],"die Augenbrauen"],[43,"noun","die Figur",["postava"],"die Figuren"],[43,"noun","die Kappe",["čapka","kšiltovka"],"die Kappen"],[43,"noun","die Kette",["řetízek"],"die Ketten"],[43,"noun","die Krawatte",["kravata"],"die Krawatten"],[43,"noun","die Lederhose",["kožené kalhoty"],"die Lederhosen"],[43,"noun","die Modepolizei",["módní policie"],"obvykle bez množného čísla"],[43,"noun","die Sohle",["podrážka"],"die Sohlen"],[43,"noun","die Sonnenbrille",["sluneční brýle"],"die Sonnenbrillen"],[43,"noun","die Wahl",["volba","výběr"],"die Wahlen"],[43,"noun","das Detail",["detail"],"die Details"],[43,"noun","das Gefühl",["pocit","cit"],"die Gefühle"],[43,"noun","das Make-up",["make-up"],"die Make-ups"],[43,"noun","das Piercing",["piercing"],"die Piercings"],[43,"noun","das Tuch",["šátek"],"die Tücher"],
+[44,"noun","die Armbanduhr",["náramkové hodinky"],"die Armbanduhren"],[44,"noun","die Handtasche",["kabelka"],"die Handtaschen"],[44,"noun","die Markenkleidung",["značkové oblečení"],"obvykle bez množného čísla"],[45,"noun","das Sprichwort",["přísloví","pořekadlo"],"die Sprichwörter"],
+[39,"adjective","elegant",["elegantní"]],[40,"adjective","kühl",["chladný"]],[42,"adjective","eng",["úzký"]],[43,"adjective","dezent",["decentní"]],[43,"adjective","extravagant",["extravagantní"]],[43,"adjective","fein",["jemný"]],[43,"adjective","flach",["rovný","nízký"]],[43,"adjective","gepunktet",["puntíkovaný"]],[43,"adjective","gestreift",["pruhovaný"]],[43,"adjective","gewöhnlich",["obyčejný","normální"]],[43,"adjective","großartig",["úžasný","skvělý","velkolepý"]],[43,"adjective","weit",["široký"]],[43,"adjective","zerrissen",["roztrhaný"]],[44,"adjective","altmodisch",["staromódní","nemoderní"]],[44,"adjective","einverstanden",["souhlasící","být zajedno"]],[44,"adjective","leger",["ležérní"]],[44,"adjective","schick",["šik","elegantní"]],[44,"adjective","seriös",["seriózní"]],[45,"adjective","stilgerecht",["odpovídající stylu"]],
+[39,"verb","ausleihen",["vypůjčit si"],"hat sich ausgeliehen",{display:"vypůjčil/a si",accepts:["vypůjčil si","vypůjčila si"]}],[39,"verb","einpacken",["(za)balit"],"hat eingepackt",{display:"zabalil/a",accepts:["zabalil","zabalila"]}],[42,"verb","anprobieren",["zkusit","vyzkoušet si (oblečení, boty)"],"hat anprobiert",{display:"zkusil/a si, vyzkoušel/a si",accepts:["zkusil si","zkusila si","vyzkoušel si","vyzkoušela si"]}],[42,"verb","geschehen",["dít se","stát se"],"ist geschehen",{display:"stalo se",accepts:["stalo se"]}],[42,"verb","passen",["padnout","sedět (oblečení)"],"hat gepasst",{display:"padlo, sedělo",accepts:["padlo","sedělo"]}],[43,"verb","aufpassen",["dávat pozor"],"hat aufgepasst",{display:"dával/a pozor",accepts:["dával pozor","dávala pozor"]}],[43,"verb","betonen",["zdůraznit"],"hat betont",{display:"zdůraznil/a",accepts:["zdůraznil","zdůraznila"]}],[43,"verb","erfahren",["dozvědět se"],"hat erfahren",{display:"dozvěděl/a se",accepts:["dozvěděl se","dozvěděla se"]}],[43,"verb","kombinieren",["kombinovat"],"hat kombiniert",{display:"kombinoval/a",accepts:["kombinoval","kombinovala"]}],[43,"verb","nennen",["(po)jmenovat"],"hat genannt",{display:"pojmenoval/a",accepts:["pojmenoval","pojmenovala","jmenoval","jmenovala"]}],[43,"verb","stehen",["slušet (oblečení)"],"hat gestanden",{display:"slušelo",accepts:["slušelo"]}],[43,"verb","stylen",["upravit","zkrášlit"],"hat gestylt",{display:"upravil/a, zkrášlil/a",accepts:["upravil","upravila","zkrášlil","zkrášlila"]}],[43,"verb","zusammenpassen",["hodit se k sobě"],"hat zusammengepasst",{display:"hodilo se k sobě",accepts:["hodilo se k sobě"]}],
+[40,"phrase","auf keinen Fall",["v žádném případě"]],[42,"phrase","Gern geschehen.",["Rádo se stalo."]],[42,"phrase","Okay, los geht's.",["Ok, tak pojďme."]]
+].map(function(r){return{page:r[0],kind:r[1],de:r[2],cs:r[3],plural:r[1]==="noun"?(r[4]||""):"",note:r[1]==="noun"?(r[5]||""):"",dePast:r[1]==="verb"?r[4]:"",csPast:r[1]==="verb"?r[5]:null}});
+
+const cats=new Set(),pages=new Set();
+let direction="de-cs",mode="type",addPerfekt=false,questions=[],index=0,score=0,chosenAux="",chosenTail="";
+const screenIds=["select","settings","quiz","result"];
+function czech(e){return e.cs.join(", ")}
+function verbs(){return entries.filter(function(e){return e.kind==="verb"})}
+function toEntry(r){return{page:r[0],kind:r[1],de:r[2],cs:r[3],plural:r[1]==="noun"?(r[4]||""):"",note:r[1]==="noun"?(r[5]||""):"",dePast:r[1]==="verb"?r[4]:"",csPast:r[1]==="verb"?r[5]:null}}
+const entries=rows;
+function norm(s){return String(s||"").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ß/g,"ss").replace(/[.,!?;]/g,"").replace(/\s+/g," ")}
+function shuffle(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function selectedForms(){
+ const fc=cats.size>0,fp=pages.size>0,out=[];if(!fc&&!fp)return out;
+ entries.forEach(function(e){if(fp&&!pages.has(e.page))return;
+  if(e.kind==="verb"){if(!fc||cats.has("verb-inf"))out.push({entry:e,aspect:"inf"});if(!fc||cats.has("verb-past"))out.push({entry:e,aspect:"past"})}
+  else if(!fc||cats.has(e.kind))out.push({entry:e,aspect:"word"});
+ });return out
+}
+function countUpdate(){const n=selectedForms().length,any=cats.size||pages.size;document.getElementById("count").textContent=any?"Vybráno "+n+" cvičení.":"Zatím není nic vybráno. Nebo zvol „Procvičovat vše“.";document.getElementById("continue").disabled=!n}
+document.querySelectorAll("[data-cat]").forEach(function(b){b.addEventListener("click",function(){cats.has(b.dataset.cat)?cats.delete(b.dataset.cat):cats.add(b.dataset.cat);b.setAttribute("aria-pressed",cats.has(b.dataset.cat)?"true":"false");countUpdate()})});
+document.querySelectorAll("[data-page]").forEach(function(b){b.addEventListener("click",function(){const p=Number(b.dataset.page);pages.has(p)?pages.delete(p):pages.add(p);b.setAttribute("aria-pressed",pages.has(p)?"true":"false");countUpdate()})});
+document.getElementById("all").addEventListener("click",function(){
+ const cb=Array.from(document.querySelectorAll("[data-cat]")),pb=Array.from(document.querySelectorAll("[data-page]")),clear=cats.size===cb.length&&pages.size===pb.length;
+ cats.clear();pages.clear();cb.concat(pb).forEach(function(b){const on=!clear;b.setAttribute("aria-pressed",on?"true":"false");if(on){if(b.dataset.cat)cats.add(b.dataset.cat);if(b.dataset.page)pages.add(Number(b.dataset.page))}});countUpdate()
+});
+function show(id){screenIds.forEach(function(x){document.getElementById(x).hidden=x!==id});window.scrollTo({top:0,behavior:"smooth"})}
+document.getElementById("continue").addEventListener("click",function(){updateExtra();updateSummary();show("settings")});
+document.getElementById("back").addEventListener("click",function(){show("select")});
+document.querySelectorAll("[data-dir]").forEach(function(b){b.addEventListener("click",function(){direction=b.dataset.dir;document.querySelectorAll("[data-dir]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});updateSummary()})});
+document.querySelectorAll("[data-mode]").forEach(function(b){b.addEventListener("click",function(){mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")})})});
+function updateExtra(){const has=selectedForms().some(function(x){return x.entry.kind==="verb"});document.getElementById("extra").hidden=!has;if(!has){addPerfekt=false;document.getElementById("perfekt").setAttribute("aria-pressed","false")}}
+document.getElementById("perfekt").addEventListener("click",function(){addPerfekt=!addPerfekt;this.setAttribute("aria-pressed",addPerfekt?"true":"false");updateSummary()});
+function updateSummary(){
+ const extra=addPerfekt?verbs().filter(function(v){return(!pages.size||pages.has(v.page))&&(!cats.size||cats.has("verb-inf")||cats.has("verb-past"))}).length:0;
+ const p=pages.size?"strany "+Array.from(pages).sort().join(", "):"všechny strany";
+ const d=direction==="both"?"oba směry":direction==="de-cs"?"němčina → čeština":"čeština → němčina";
+ const n=selectedForms().length*(direction==="both"?2:1)+extra;
+ document.getElementById("summary").textContent="Připraveno přibližně "+n+" otázek · "+p+" · "+d+(addPerfekt?" · navíc tvoření Perfektu":"")
+}
+function splitPerfect(s){const a=String(s).split(/\s+/);return{aux:a.shift(),tail:a.join(" ")}}
+function dirs(item){return item.aspect==="conjugate"?["de-dePast"]:direction==="both"?["de-cs","cs-de"]:[direction]}
+function makeQuestion(item,pair){
+ const e=item.entry,a=item.aspect;let prompt,answerSide;
+ if(a==="conjugate"){prompt=e.de;answerSide="dePast"}
+ else if(a==="past"){if(pair==="de-cs"){prompt=e.dePast;answerSide="csPast"}else{prompt=e.csPast.display;answerSide="dePast"}}
+ else if(pair==="de-cs"){prompt=e.de;answerSide="cs"}else{prompt=czech(e);answerSide="de"}
+ let answer="",acceptable=[],kind="plain";
+ if(answerSide==="cs"){answer=czech(e);acceptable=e.cs.concat([answer])}
+ if(answerSide==="de"){answer=e.de;acceptable=[e.de]}
+ if(answerSide==="csPast"){answer=e.csPast.display;acceptable=e.csPast.accepts.concat([answer])}
+ if(answerSide==="dePast"){answer=e.dePast;acceptable=[answer];kind="dePast"}
+ const q={entry:e,aspect:a,pair:pair,prompt:prompt,answerSide:answerSide,answer:answer,acceptable:acceptable,answerKind:kind};q.pool=poolFor(q);return q
+}
+function poolFor(q){
+ const src=q.answerSide==="dePast"||q.answerSide==="csPast"||q.aspect==="past"||q.aspect==="conjugate"?verbs():entries.filter(function(e){return e.kind===q.entry.kind});
+ return src.map(function(e){if(q.answerSide==="dePast")return splitPerfect(e.dePast).tail;if(q.answerSide==="csPast")return e.csPast.display;if(q.answerSide==="de")return e.de;return czech(e)})
+}
+function buildQuestions(){
+ const f=selectedForms();if(addPerfekt)verbs().forEach(function(v){if((!pages.size||pages.has(v.page))&&(!cats.size||cats.has("verb-inf")||cats.has("verb-past")))f.push({entry:v,aspect:"conjugate"})});
+ const all=[];f.forEach(function(item){dirs(item).forEach(function(pair){all.push(makeQuestion(item,pair))})});return shuffle(all)
+}
+document.getElementById("start").addEventListener("click",startQuiz);
+function startQuiz(){questions=buildQuestions();index=0;score=0;if(!questions.length)return;show("quiz");renderQuestion()}
+function renderQuestion(){
+ const q=questions[index];chosenAux="";chosenTail="";
+ document.getElementById("progress").textContent="Otázka "+(index+1)+" z "+questions.length;
+ document.getElementById("score").textContent="Správně: "+score;
+ document.getElementById("fill").style.width=(index/questions.length*100)+"%";
+ document.getElementById("promptLabel").textContent=q.aspect==="conjugate"?"Utvoř německý Perfekt":q.pair==="de-cs"?"Přelož do češtiny":q.pair==="cs-de"?"Přelož do němčiny":"Přelož";
+ document.getElementById("promptWord").textContent=q.prompt;
+ document.getElementById("meta").textContent=["strana "+q.entry.page,q.entry.plural,q.entry.note].filter(Boolean).join(" · ");
+ const fb=document.getElementById("feedback");fb.hidden=true;fb.className="feedback";document.getElementById("next").hidden=true;renderAnswers(q)
+}
+function renderAnswers(q){
+ const zone=document.getElementById("answer");zone.innerHTML="";
+ if(q.answerKind==="dePast"){
+  const box=document.createElement("div");box.className="auxbox";const label=document.createElement("p");label.className="auxlabel";label.textContent="Vyber pomocné sloveso";box.appendChild(label);
+  const row=document.createElement("div");row.className="auxrow";
+  ["hat","ist"].forEach(function(word){const b=document.createElement("button");b.type="button";b.className="aux";b.textContent=word;b.setAttribute("aria-pressed","false");b.addEventListener("click",function(){chosenAux=word;row.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});updateAux(q);if(mode==="choice")checkParts(q)});row.appendChild(b)});
+  box.appendChild(row);const state=document.createElement("div");state.id="auxState";state.className="auxstate";state.textContent=mode==="choice"?"Pak vyber tvar slovesa.":"K Perfektu dopiš také příčestí.";box.appendChild(state);zone.appendChild(box)
+ }
+ if(mode==="type"){
+  const input=document.createElement("input");input.id="input";input.className="input";input.type="text";input.autocomplete="off";input.spellcheck=false;input.maxLength=120;input.placeholder=q.answerKind==="dePast"?"Napiš zbytek, např. eingepackt":"Napiš odpověď…";
+  const hint=document.createElement("p");hint.className="hint";hint.textContent="Šířka pole odpovídá přibližně 40 znakům.";zone.appendChild(input);zone.appendChild(hint);
+  const actions=document.createElement("div");actions.style.textAlign="center";const check=document.createElement("button");check.className="primary";check.textContent="Zkontrolovat";check.addEventListener("click",function(){checkTyped(q)});actions.appendChild(check);zone.appendChild(actions);
+  input.addEventListener("keydown",function(ev){if(ev.key==="Enter")checkTyped(q)})
+ }else{
+  const grid=document.createElement("div");grid.className="answers";
+  makeChoices(q).forEach(function(value){const b=document.createElement("button");b.type="button";b.className="choice";b.textContent=value;b.addEventListener("click",function(){
+   if(q.answerKind==="dePast"){chosenTail=value;grid.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});updateAux(q);checkParts(q)}
+   else finish(norm(value)===norm(q.answer))
+  });grid.appendChild(b)});zone.appendChild(grid)
+ }
+}
+function updateAux(q){const s=document.getElementById("auxState");if(!s)return;if(chosenAux&&chosenTail)s.textContent="Máš obě části. Kontroluji odpověď…";else if(chosenAux)s.textContent="Teď vyber správný tvar slovesa.";else if(chosenTail)s.textContent="Teď vyber pomocné sloveso.";else s.textContent=mode==="choice"?"Vyber pomocné sloveso i tvar slovesa.":"K Perfektu dopiš také příčestí."}
+function makeChoices(q){
+ const right=q.answerKind==="dePast"?splitPerfect(q.answer).tail:q.answer;let pool=q.pool.slice();
+ if(q.entry.kind==="phrase")pool=pool.concat(entries.filter(function(e){return e.kind!=="phrase"}).map(function(e){return q.answerSide==="de"?e.de:czech(e)}));
+ const seen=new Set(),wrong=shuffle(pool).filter(function(x){const n=norm(x);if(!n||n===norm(right)||seen.has(n))return false;seen.add(n);return true}).slice(0,3);
+ return shuffle([right].concat(wrong))
+}
+function accepted(q,value){return q.acceptable.some(function(x){return norm(x)===norm(value)})}
+function checkTyped(q){
+ const value=document.getElementById("input").value.trim();
+ if(q.answerKind==="dePast"){if(!chosenAux){document.getElementById("auxState").textContent="Nejdřív vyber pomocné sloveso hat nebo ist.";return}finish(norm(chosenAux+" "+value)===norm(q.answer))}
+ else finish(accepted(q,value))
+}
+function checkParts(q){if(chosenAux&&chosenTail){const right=splitPerfect(q.answer);finish(chosenAux===right.aux&&norm(chosenTail)===norm(right.tail))}}
+function escape(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function finish(ok){
+ if(ok)score++;document.getElementById("score").textContent="Správně: "+score;
+ const q=questions[index],fb=document.getElementById("feedback");fb.hidden=false;fb.className="feedback "+(ok?"good":"bad");fb.innerHTML=(ok?"✓ Správně":"✕ Špatně")+"<small>Správná odpověď: "+escape(q.answer)+"</small>";
+ document.querySelectorAll("#answer button,#answer input").forEach(function(x){x.disabled=true});
+ const next=document.getElementById("next");next.hidden=false;next.textContent=index===questions.length-1?"Zobrazit výsledek":"Další otázka →"
+}
+document.getElementById("next").addEventListener("click",function(){index++;if(index>=questions.length)results();else renderQuestion()});
+document.getElementById("exit").addEventListener("click",function(){show("settings")});
+document.getElementById("backSettings").addEventListener("click",function(){show("settings")});
+function results(){const pct=Math.round(score/questions.length*100);document.getElementById("resultScore").textContent=score+" / "+questions.length;document.getElementById("resultText").textContent="Úspěšnost "+pct+" %. Můžeš si celé kolo zopakovat nebo změnit výběr.";document.getElementById("emoji").textContent=pct>=85?"🎉":pct>=55?"✨":"💪";show("result")}
+document.getElementById("repeat").addEventListener("click",startQuiz);
+document.getElementById("newSelection").addEventListener("click",function(){show("select")});
+countUpdate();
+const dictModal=document.getElementById("dictionaryModal");
+const kindNames={noun:"Podstatné jméno",adjective:"Přídavné jméno / příslovce",verb:"Sloveso",phrase:"Slovní spojení / fráze"};
+function dictLine(card,label,value){if(!value)return;const p=document.createElement("p");p.className="dict-detail";const b=document.createElement("strong");b.textContent=label+": ";p.appendChild(b);p.appendChild(document.createTextNode(value));card.appendChild(p)}
+function renderDictionary(){
+ const query=norm(document.getElementById("dictSearch").value),kind=document.getElementById("dictKind").value,page=document.getElementById("dictPage").value;
+ const found=entries.filter(function(e){return(kind==="all"||e.kind===kind)&&(page==="all"||String(e.page)===page)&&(!query||norm([e.de,czech(e),e.plural,e.dePast,e.note].join(" ")).includes(query))});
+ const list=document.getElementById("dictList");list.innerHTML="";
+ document.getElementById("dictCount").textContent=found.length+" "+(found.length===1?"položka":found.length<5?"položky":"položek");
+ if(!found.length){const empty=document.createElement("div");empty.className="dict-empty";empty.textContent="Tomuto hledání nic neodpovídá.";list.appendChild(empty);return}
+ found.forEach(function(e){
+  const card=document.createElement("article");card.className="dict-item";
+  const tag=document.createElement("span");tag.className="dict-tag";tag.textContent=kindNames[e.kind]+" · strana "+e.page;card.appendChild(tag);
+  const title=document.createElement("h3");title.textContent=e.de;card.appendChild(title);
+  dictLine(card,"Česky",czech(e));
+  if(e.kind==="verb")dictLine(card,"Perfekt",e.dePast);
+  else if(e.plural)dictLine(card,"Množné číslo",e.plural);
+  if(e.note)dictLine(card,"Poznámka",e.note);
+  list.appendChild(card)
+ })
+}
+function openDictionary(){dictModal.hidden=false;document.body.style.overflow="hidden";renderDictionary();document.getElementById("dictSearch").focus()}
+function closeDictionary(){dictModal.hidden=true;document.body.style.overflow="";document.getElementById("dictOpen").focus()}
+document.getElementById("dictOpen").addEventListener("click",openDictionary);
+document.getElementById("dictClose").addEventListener("click",closeDictionary);
+document.getElementById("dictSearch").addEventListener("input",renderDictionary);
+document.getElementById("dictKind").addEventListener("change",renderDictionary);
+document.getElementById("dictPage").addEventListener("change",renderDictionary);
+dictModal.addEventListener("click",function(event){if(event.target===dictModal)closeDictionary()});
+document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!dictModal.hidden)closeDictionary()});
+</script></body></html>
+
