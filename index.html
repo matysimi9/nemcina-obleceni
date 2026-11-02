@@ -12,13 +12,16 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus
 .page{color:#22577b;background:#e2f2ff;border:1px solid #c3e4fb;padding:10px 15px}.page[aria-pressed=true]{background:#c9e7ff;border-color:#8ecdf5;color:#174466}
 .all{background:#29263a;color:white;padding:12px 16px;white-space:nowrap}.bottom,.footrow{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:20px}.count{font-size:14px;color:var(--muted)}
 .primary{background:var(--purple);color:white;padding:12px 20px;box-shadow:0 7px 16px #6d28d92e}.primary:hover{background:#5520aa}.primary:disabled{opacity:.42;cursor:not-allowed;transform:none}.secondary{background:#f1eef6;color:#4f4a61;padding:10px 15px}.back,.exit{background:transparent;border:0;color:#6d28d9;font-weight:750;padding:5px 0}.back{margin-bottom:14px}
-.opt{background:#f3effa;color:#4b3f61;border:1px solid #e5deef;padding:11px 16px}.opt[aria-pressed=true]{background:#6d28d9;color:#fff}.label{font-size:13px;color:#5f5a70;font-weight:800;margin:22px 0 10px}.extra{margin-top:18px;padding:16px;border-radius:16px;background:#faf7ff;border:1px solid #e9e0fa}.summary{margin-top:18px;padding:13px 15px;background:#f7f4fb;border-radius:14px;color:#625d72;font-size:14px}
+.opt{background:#f3effa;color:#4b3f61;border:1px solid #e5deef;padding:11px 16px}.opt[aria-pressed=true]{background:#6d28d9;color:#fff}.label{font-size:13px;color:#5f5a70;font-weight:800;margin:22px 0 10px}.extra-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px;margin-top:18px}.extra{margin-top:0;padding:16px;border-radius:16px;background:#faf7ff;border:1px solid #e9e0fa}.summary{margin-top:18px;padding:13px 15px;background:#f7f4fb;border-radius:14px;color:#625d72;font-size:14px}
 .top{display:flex;justify-content:space-between;align-items:center}.quiz-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px}.progress,.score{font-size:13px;color:#686477}.track{height:8px;background:#ebe7f2;border-radius:99px;margin:12px 0 20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#9a6bea,#6d28d9);width:0}
 .prompt{text-align:center;background:linear-gradient(135deg,#f6f0ff,#fff8f2);border-radius:18px;padding:clamp(26px,6vw,52px) 18px 30px}.prompt p{margin:0}.prompt-label{color:#797287;font-size:13px;font-weight:750}.word{font-size:clamp(25px,5vw,38px);font-weight:800;overflow-wrap:anywhere}.meta{font-size:12px;color:#8a8498;margin-top:12px!important}.answer{margin-top:22px}.input{display:block;width:min(100%,40ch);min-height:54px;margin:auto;border:1.5px solid #d8d1e4;border-radius:13px;padding:12px 15px;font-size:18px}.hint{text-align:center;color:var(--muted);font-size:12px;margin:8px 0 14px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 .choice{min-height:54px;padding:12px 14px;border:1px solid #e6e1ed;border-radius:14px;background:white;text-align:left;color:#3b354b;font-weight:700}.choice-translation{display:block;margin-top:5px;color:#938da0;font-size:12px;font-weight:500;line-height:1.3}.choice:hover{background:#fbf9ff;border-color:#bda8e2}
 .auxbox{text-align:center;margin:0 auto 16px}.auxlabel{font-size:12px;color:#726c80;font-weight:800;margin:0 0 8px}.auxrow{display:flex;justify-content:center;gap:10px}.aux{min-width:92px;padding:10px 18px;color:#514179;background:#eee8fb;border:1px solid #d8caf3}.aux[aria-pressed=true]{background:#8b5cf6;color:white}.auxstate{font-size:12px;color:#817b8f;margin:8px}
 .feedback{margin-top:18px;padding:14px 16px;border-radius:14px;font-weight:750}.good{color:var(--green);background:#e9f8ef}.bad{color:var(--red);background:#fff0f1}.feedback small{display:block;color:#615d6b;font-weight:500;margin-top:3px}.result{text-align:center;padding:34px 22px}.result-score{font-size:48px;font-weight:850;color:var(--purple)}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.gender-options{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.gender-choice,.gender-more{min-height:62px;border:1px solid;border-radius:14px;font-size:23px;font-weight:850;transition:transform .14s,filter .14s}.gender-choice:hover,.gender-more:hover{transform:translateY(-1px);filter:brightness(.97)}.gender-choice{grid-column:span 2}.gender-der{color:#4055c7;background:#eef1ff;border-color:#c7cff8}.gender-die{color:#d33143;background:#fff0f1;border-color:#f4c5ca}.gender-das{color:#16834b;background:#e9f8ef;border-color:#bce8cc}.gender-more{grid-column:span 3;color:#514179;background:#f2edfb;border-color:#d8caf3;font-size:17px}.gender-plural{grid-column:span 3;color:#b96117;background:#fff4e9;border-color:#f2d2b2;font-size:17px}
+.gender-overlay{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:14px;background:#211936a8;backdrop-filter:blur(5px)}.gender-dialog{width:min(480px,100%);padding:22px;background:#fff;border:1px solid #e5deef;border-radius:20px;box-shadow:0 25px 80px #160d2a55}.gender-dialog h2{margin:0 0 5px}.gender-dialog p{margin:0;color:var(--muted);font-size:14px}.gender-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.gender-check{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1px solid;border-radius:12px;font-size:19px;font-weight:800}.gender-check input{width:18px;height:18px;accent-color:currentColor}.gender-dialog-actions{display:flex;justify-content:flex-end;gap:10px}
 @media(max-width:640px){.head{flex-direction:column}.all{width:100%}.bottom,.footrow{align-items:stretch;flex-direction:column}.bottom .primary,.footrow .primary{width:100%}.answers{grid-template-columns:1fr}.top{align-items:flex-start}}
+@media(max-width:640px){.gender-options{grid-template-columns:repeat(2,minmax(0,1fr))}.gender-choice{grid-column:span 1}.gender-more,.gender-plural{grid-column:span 2}.gender-dialog{padding:18px}}
 /* Slovník */
 .brand{position:sticky;top:8px;z-index:6;padding:8px 10px;background:#f8f5fbeF;backdrop-filter:blur(10px);border-radius:16px}
 .dict-open{margin-left:auto;padding:10px 16px;border:1px solid #d8caf3;border-radius:13px;background:#eee8fb;color:#5b2ca4;font-weight:800}
@@ -94,13 +97,15 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus
 <section id="settings" hidden><button id="back" class="back">← Zpět k výběru</button><div class="hero"><p class="eyebrow">Druhý krok</p><h1>Jak chceš trénovat?</h1><p>Zvol směr překladu a potom napiš odpověď, nebo ji vyber z možností.</p></div>
 <div class="panel"><h2>Směr překladu</h2><div class="row" style="margin-top:12px"><button class="opt" data-dir="de-cs" aria-pressed="true">Němčina → čeština</button><button class="opt" data-dir="cs-de" aria-pressed="false">Čeština → němčina</button><button class="opt" data-dir="both" aria-pressed="false">Oběma směry</button></div>
 <p class="label">Způsob odpovídání</p><div class="row"><button class="opt" data-mode="type" aria-pressed="true">Napsat odpověď</button><button class="opt" data-mode="choice" aria-pressed="false">Vybrat ze 4 možností</button></div>
-<div id="extra" class="extra" hidden><p class="label" style="margin:0">Navíc pro slovesa</p><p class="note">Převeď německý infinitiv na Perfekt.</p><button id="perfekt" class="opt" aria-pressed="false" style="margin-top:12px">Německý infinitiv → Perfekt</button></div>
+<div class="extra-grid"><div id="extra" class="extra" hidden><p class="label" style="margin:0">Navíc pro slovesa</p><p class="note">Převeď německý infinitiv na Perfekt.</p><button id="perfekt" class="opt" aria-pressed="false" style="margin-top:12px">Německý infinitiv → Perfekt</button></div>
+<div id="genderExtra" class="extra" hidden><p class="label" style="margin:0">Navíc pro podstatná jména</p><p class="note">Uhádej rod podstatného jména.</p><p class="note">Slovo v jednotném čísle → vybereš rod.</p><p class="note">U pomnožných vyber „die (pomnožné)“.</p><button id="genderToggle" class="opt" aria-pressed="false" style="margin-top:12px">Procvičovat rody podstatných jmen</button></div></div>
 <div id="summary" class="summary"></div><div class="footrow"><span class="note">Správná odpověď se ukáže po každé otázce.</span><button id="start" class="primary">Začít procvičovat →</button></div></div></section>
 <section id="quiz" hidden><div class="top"><div><div id="progress" class="progress"></div><div id="score" class="score"></div></div><div class="quiz-actions"><button id="exit" class="exit">Ukončit procvičování</button><button id="backSettings" class="secondary">Změnit nastavení</button></div></div><div class="track"><div id="fill" class="fill"></div></div>
 <div class="quiz"><div class="prompt"><p id="promptLabel" class="prompt-label"></p><p id="promptWord" class="word"></p><p id="meta" class="meta"></p></div><div id="answer" class="answer"></div><div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
 <div class="footrow"><button id="next" class="primary" hidden>Další otázka →</button></div></div></section>
 <section id="result" hidden><div class="panel result"><div id="emoji" style="font-size:42px">✨</div><p class="eyebrow">Hotovo</p><h1>Kolo dokončeno.</h1><div id="resultScore" class="result-score"></div><p id="resultText" class="note"></p><div class="actions"><button id="repeat" class="primary">Procvičit znovu</button><button id="newSelection" class="secondary">Změnit výběr</button></div></div></section>
 </main></div>
+<div id="genderModal" class="gender-overlay" hidden><section class="gender-dialog" role="dialog" aria-modal="true" aria-labelledby="genderDialogTitle"><h2 id="genderDialogTitle">Zaškrtni všechny správné možnosti</h2><p>Vyber všechny rody, které k tomuto slovu patří.</p><div class="gender-checks"><label class="gender-check gender-der"><input type="checkbox" name="genderAnswer" value="der">der</label><label class="gender-check gender-die"><input type="checkbox" name="genderAnswer" value="die">die</label><label class="gender-check gender-das"><input type="checkbox" name="genderAnswer" value="das">das</label></div><div class="gender-dialog-actions"><button id="genderCancel" class="secondary" type="button">Zrušit</button><button id="genderSubmit" class="primary" type="button">Zkontrolovat</button></div></section></div>
 <script>
 const rows=[
 [39,"noun","der Bikini",["bikiny"],"die Bikinis"],[39,"noun","der Flipflop",["žabka (bota)"],"die Flipflops"],[39,"noun","der Gummistiefel",["gumák","holinka"],"die Gummistiefel"],[39,"noun","der Pullover",["svetr"],"die Pullover"],[39,"noun","der Regenschirm",["deštník"],"die Regenschirme"],[39,"noun","der Schal",["šála"],"die Schals"],[39,"noun","die Hose",["kalhoty"],"die Hosen"],[39,"noun","die Jacke",["bunda"],"die Jacken"],[39,"noun","die Jeans",["džíny"],"die Jeans","ženský rod nebo pomnožné"],[39,"noun","die Wetter-App",["aplikace počasí"],"die Wetter-Apps"],[39,"noun","das Hemd",["košile"],"die Hemden"],[39,"noun","das Kleid",["šaty"],"die Kleider"],
@@ -114,7 +119,7 @@ const rows=[
 ].map(function(r){return{page:r[0],kind:r[1],de:r[2],cs:r[3],plural:r[1]==="noun"?(r[4]||""):"",note:r[1]==="noun"?(r[5]||""):"",dePast:r[1]==="verb"?r[4]:"",csPast:r[1]==="verb"?r[5]:null}});
 
 const cats=new Set(),pages=new Set();
-let direction="de-cs",mode="type",addPerfekt=false,questions=[],index=0,score=0,chosenAux="",chosenTail="";
+let direction="de-cs",mode="type",addPerfekt=false,addGender=false,questions=[],index=0,score=0,chosenAux="",chosenTail="",activeGenderQuestion=null;
 const screenIds=["select","settings","quiz","result"];
 function czech(e){return e.cs.join(", ")}
 function verbs(){return entries.filter(function(e){return e.kind==="verb"})}
@@ -137,18 +142,27 @@ document.getElementById("all").addEventListener("click",function(){
  cats.clear();pages.clear();cb.concat(pb).forEach(function(b){const on=!clear;b.setAttribute("aria-pressed",on?"true":"false");if(on){if(b.dataset.cat)cats.add(b.dataset.cat);if(b.dataset.page)pages.add(Number(b.dataset.page))}});countUpdate()
 });
 function show(id){screenIds.forEach(function(x){document.getElementById(x).hidden=x!==id});window.scrollTo({top:0,behavior:"smooth"})}
-document.getElementById("continue").addEventListener("click",function(){updateExtra();updateSummary();show("settings")});
+document.getElementById("continue").addEventListener("click",function(){updateExtra();updateGenderExtra();updateSummary();show("settings")});
 document.getElementById("back").addEventListener("click",function(){show("select")});
 document.querySelectorAll("[data-dir]").forEach(function(b){b.addEventListener("click",function(){direction=b.dataset.dir;document.querySelectorAll("[data-dir]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});updateSummary()})});
 document.querySelectorAll("[data-mode]").forEach(function(b){b.addEventListener("click",function(){mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")})})});
 function updateExtra(){const has=selectedForms().some(function(x){return x.entry.kind==="verb"});document.getElementById("extra").hidden=!has;if(!has){addPerfekt=false;document.getElementById("perfekt").setAttribute("aria-pressed","false")}}
+function updateGenderExtra(){const has=selectedForms().some(function(x){return x.entry.kind==="noun"});document.getElementById("genderExtra").hidden=!has;if(!has){addGender=false;document.getElementById("genderToggle").setAttribute("aria-pressed","false")}}
 document.getElementById("perfekt").addEventListener("click",function(){addPerfekt=!addPerfekt;this.setAttribute("aria-pressed",addPerfekt?"true":"false");updateSummary()});
+document.getElementById("genderToggle").addEventListener("click",function(){addGender=!addGender;this.setAttribute("aria-pressed",addGender?"true":"false");updateSummary()});
 function updateSummary(){
  const extra=addPerfekt?verbs().filter(function(v){return(!pages.size||pages.has(v.page))&&(!cats.size||cats.has("verb-inf")||cats.has("verb-past"))}).length:0;
+ const genderCount=addGender?selectedForms().filter(function(x){return x.entry.kind==="noun"}).length:0;
  const p=pages.size?"strany "+Array.from(pages).sort().join(", "):"všechny strany";
  const d=direction==="both"?"oba směry":direction==="de-cs"?"němčina → čeština":"čeština → němčina";
- const n=selectedForms().length*(direction==="both"?2:1)+extra;
- document.getElementById("summary").textContent="Připraveno přibližně "+n+" otázek · "+p+" · "+d+(addPerfekt?" · navíc tvoření Perfektu":"")
+ const n=selectedForms().length*(direction==="both"?2:1)+extra+genderCount;
+ document.getElementById("summary").textContent="Připraveno přibližně "+n+" otázek · "+p+" · "+d+(addPerfekt?" · navíc tvoření Perfektu":"")+(genderCount?" · navíc "+genderCount+" otázek na rod":"")
+}
+function nounPrompt(de){return String(de).split(/\s*\/\s*/).map(function(part){return part.replace(/^(der|die|das)\s*/i,"").trim()}).filter(Boolean).join(" / ")}
+function articleGenders(e){const found=[];String(e.de).split(/\s*\/\s*/).forEach(function(part){const m=part.trim().match(/^(der|die|das)\b/i);if(m&&found.indexOf(m[1].toLowerCase())<0)found.push(m[1].toLowerCase())});return found}
+function makeGenderQuestion(item){
+ const e=item.entry,note=e.note||"",pluralMarker=/pomnožné/i.test(note)||/^pomnožné$/i.test(e.plural||""),pluralOnly=pluralMarker&&!/ženský rod/i.test(note),genders=articleGenders(e);
+ return{entry:e,aspect:"gender",prompt:nounPrompt(e.de),genders:genders,pluralOnly:pluralOnly,pluralAllowed:pluralMarker,answer:pluralOnly?"die (pomnožné)":genders.join(" / ")+(pluralMarker?" (také pomnožné)":"")}
 }
 function splitPerfect(s){const a=String(s).split(/\s+/);return{aux:a.shift(),tail:a.join(" ")}}
 function dirs(item){return item.aspect==="conjugate"?["de-dePast"]:direction==="both"?["de-cs","cs-de"]:[direction]}
@@ -170,7 +184,7 @@ function poolFor(q){
 }
 function buildQuestions(){
  const f=selectedForms();if(addPerfekt)verbs().forEach(function(v){if((!pages.size||pages.has(v.page))&&(!cats.size||cats.has("verb-inf")||cats.has("verb-past")))f.push({entry:v,aspect:"conjugate"})});
- const all=[];f.forEach(function(item){dirs(item).forEach(function(pair){all.push(makeQuestion(item,pair))})});return shuffle(all)
+ const all=[];f.forEach(function(item){dirs(item).forEach(function(pair){all.push(makeQuestion(item,pair))})});if(addGender)selectedForms().filter(function(item){return item.entry.kind==="noun"}).forEach(function(item){all.push(makeGenderQuestion(item))});return shuffle(all)
 }
 document.getElementById("start").addEventListener("click",startQuiz);
 function startQuiz(){questions=buildQuestions();index=0;score=0;if(!questions.length)return;show("quiz");renderQuestion()}
@@ -179,13 +193,14 @@ function renderQuestion(){
  document.getElementById("progress").textContent="Otázka "+(index+1)+" z "+questions.length;
  document.getElementById("score").textContent="Správně: "+score;
  document.getElementById("fill").style.width=(index/questions.length*100)+"%";
- document.getElementById("promptLabel").textContent=q.aspect==="conjugate"?"Utvoř německý Perfekt":q.pair==="de-cs"?"Přelož do češtiny":q.pair==="cs-de"?"Přelož do němčiny":"Přelož";
+ document.getElementById("promptLabel").textContent=q.aspect==="gender"?"Urči rod podstatného jména":q.aspect==="conjugate"?"Utvoř německý Perfekt":q.pair==="de-cs"?"Přelož do češtiny":q.pair==="cs-de"?"Přelož do němčiny":"Přelož";
  document.getElementById("promptWord").textContent=q.prompt;
- document.getElementById("meta").textContent=["strana "+q.entry.page,q.pair==="cs-de"?"":q.entry.plural,q.entry.note].filter(Boolean).join(" · ");
+ document.getElementById("meta").textContent=q.aspect==="gender"?"strana "+q.entry.page:["strana "+q.entry.page,q.pair==="cs-de"?"":q.entry.plural,q.entry.note].filter(Boolean).join(" · ");
  const fb=document.getElementById("feedback");fb.hidden=true;fb.className="feedback";document.getElementById("next").hidden=true;renderAnswers(q)
 }
 function renderAnswers(q){
  const zone=document.getElementById("answer");zone.innerHTML="";
+ if(q.aspect==="gender"){renderGenderAnswers(q,zone);return}
  if(q.answerKind==="dePast"){
   const box=document.createElement("div");box.className="auxbox";const label=document.createElement("p");label.className="auxlabel";label.textContent="Vyber pomocné sloveso";box.appendChild(label);
   const row=document.createElement("div");row.className="auxrow";
@@ -205,6 +220,23 @@ function renderAnswers(q){
   });grid.appendChild(b)});zone.appendChild(grid)
  }
 }
+function genderChoiceCorrect(q,value){if(value==="plural")return q.pluralAllowed;if(q.pluralOnly)return false;return q.genders.length===1&&q.genders[0]===value}
+function renderGenderAnswers(q,zone){
+ const grid=document.createElement("div");grid.className="gender-options";
+ [["der","der","gender-der"],["die","die","gender-die"],["das","das","gender-das"]].forEach(function(item){const b=document.createElement("button");b.type="button";b.className="gender-choice "+item[2];b.textContent=item[1];b.addEventListener("click",function(){finish(genderChoiceCorrect(q,item[0]))});grid.appendChild(b)});
+ const more=document.createElement("button");more.type="button";more.className="gender-more";more.textContent="Více možností";more.addEventListener("click",function(){openGenderModal(q)});grid.appendChild(more);
+ const plural=document.createElement("button");plural.type="button";plural.className="gender-choice gender-plural";plural.textContent="die (pomnožné)";plural.addEventListener("click",function(){finish(genderChoiceCorrect(q,"plural"))});grid.appendChild(plural);zone.appendChild(grid)
+}
+function openGenderModal(q){activeGenderQuestion=q;document.querySelectorAll('input[name="genderAnswer"]').forEach(function(input){input.checked=false});document.getElementById("genderModal").hidden=false;document.body.style.overflow="hidden"}
+function closeGenderModal(){document.getElementById("genderModal").hidden=true;document.body.style.overflow="";activeGenderQuestion=null}
+document.getElementById("genderCancel").addEventListener("click",closeGenderModal);
+document.getElementById("genderModal").addEventListener("click",function(event){if(event.target===this)closeGenderModal()});
+document.getElementById("genderSubmit").addEventListener("click",function(){
+ if(!activeGenderQuestion)return;
+ const selected=Array.from(document.querySelectorAll('input[name="genderAnswer"]:checked')).map(function(input){return input.value}).sort(),right=activeGenderQuestion.genders.slice().sort(),ok=selected.length===right.length&&selected.every(function(value,i){return value===right[i]});
+ closeGenderModal();finish(ok)
+});
+document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!document.getElementById("genderModal").hidden)closeGenderModal()});
 function updateAux(q){const s=document.getElementById("auxState");if(!s)return;if(chosenAux&&chosenTail)s.textContent="Máš obě části. Kontroluji odpověď…";else if(chosenAux)s.textContent="Teď vyber správný tvar slovesa.";else if(chosenTail)s.textContent="Teď vyber pomocné sloveso.";else s.textContent=mode==="choice"?"Vyber pomocné sloveso i tvar slovesa.":"K Perfektu dopiš také příčestí."}
 function makeChoices(q){
  const right=q.answerKind==="dePast"?splitPerfect(q.answer).tail:q.answer;let pool=q.pool.slice();
