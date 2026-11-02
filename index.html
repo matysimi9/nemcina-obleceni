@@ -181,7 +181,7 @@ function renderQuestion(){
  document.getElementById("fill").style.width=(index/questions.length*100)+"%";
  document.getElementById("promptLabel").textContent=q.aspect==="conjugate"?"Utvoř německý Perfekt":q.pair==="de-cs"?"Přelož do češtiny":q.pair==="cs-de"?"Přelož do němčiny":"Přelož";
  document.getElementById("promptWord").textContent=q.prompt;
- document.getElementById("meta").textContent=["strana "+q.entry.page,q.entry.plural,q.entry.note].filter(Boolean).join(" · ");
+ document.getElementById("meta").textContent=["strana "+q.entry.page,q.pair==="cs-de"?"":q.entry.plural,q.entry.note].filter(Boolean).join(" · ");
  const fb=document.getElementById("feedback");fb.hidden=true;fb.className="feedback";document.getElementById("next").hidden=true;renderAnswers(q)
 }
 function renderAnswers(q){
